@@ -13,7 +13,7 @@ class TelegramControllerProvider implements ControllerProviderInterface
     public function connect(Application $app)
     {
         $controllers = $app['controllers_factory'];
-        $controllers->post('/', function() use ($app) {
+        $controllers->post('', function() use ($app) {
             $app['telegram']->commandsHandler(true);
             return new Response();
         });
