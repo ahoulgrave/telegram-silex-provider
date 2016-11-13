@@ -3,11 +3,9 @@ namespace Telegram\Bot\Silex\Provider;
 
 use Pimple\Container;
 use Pimple\ServiceProviderInterface;
-use Silex\Api\BootableProviderInterface;
-use Silex\Application;
 use Telegram\Bot\Api;
 
-class TelegramServiceProvider implements ServiceProviderInterface, BootableProviderInterface
+class TelegramServiceProvider implements ServiceProviderInterface
 {
     /**
      * @inheritdoc
@@ -27,18 +25,7 @@ class TelegramServiceProvider implements ServiceProviderInterface, BootableProvi
                     $botApi->addCommand(new $command($app));
                 }
             }
-            $app['telegram.controller_path'] = isset($app['telegram.controller_path']) ? $app['telegram.controller_path'] : '/telegram';
             return $botApi;
         };
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public function boot(Application $app)
-    {
-        if ($app['telegram.controller_path']) {
-            $app->mount($app['telegram.controller_path'], new TelegramControllerProvider());
-        }
     }
 }
