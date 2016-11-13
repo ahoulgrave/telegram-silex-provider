@@ -1,5 +1,5 @@
 <?php
-namespace Telegram\Bot\Silex;
+namespace Telegram\Bot\Silex\Command;
 
 use Silex\Application;
 use Telegram\Bot\Commands\Command;
