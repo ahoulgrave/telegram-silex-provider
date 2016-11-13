@@ -13,8 +13,8 @@
         }
     ],
     "autoload": {
-        "psr-0": {
-            "Telegram\\": "src/"
+        "psr-4": {
+            "Telegram\\Bot\\Silex\\": "src/"
         }
     }
 }

@@ -2,9 +2,9 @@
 namespace Telegram\Bot\Silex\Command;
 
 use Silex\Application;
-use Telegram\Bot\Commands\Command;
+use Telegram\Bot\Commands\Command as TelegramCommand;
 
-abstract class ApplicationAwareCommand extends Command
+abstract class ApplicationAwareCommand extends TelegramCommand
 {
     /**
      * @var Application
