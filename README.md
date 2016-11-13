@@ -56,7 +56,7 @@ class AwesomeCommand extends ApplicationAwareCommand
     /**
      * @inheritdoc
      */
-    protected $name = 'start';
+    protected $name = 'hello';
 
     /**
      * @inheritdoc
