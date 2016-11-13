@@ -37,6 +37,8 @@ If your are using a webhook to fetch the updates, you can register the Controlle
 $app->mount('/telegram-web-hook', new TelegramControllerProvider());
 ```
 
+*Your webhook should be `https://youdomain.com/telegram-web-hook/` (Note the trailing slash)*
+
 Now, when telegram sends you the updates,  the controller will look for the right command and handle it.
 
 ### <a name="commands">Commands</a>
