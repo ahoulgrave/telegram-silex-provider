@@ -1,0 +1,9 @@
+<phpunit bootstrap="vendor/autoload.php">
+    <testsuites>
+        <testsuite name="telegramsilexserviceprovider">
+            <file>tests/Provider/ServiceProviderTest.php</file>
+            <file>tests/Provider/ControllerProviderTest.php</file>
+            <file>tests/Command/ApplicationAwareCommandTest.php</file>
+        </testsuite>
+    </testsuites>
+</phpunit>

@@ -6,6 +6,10 @@
         "irazasyed/telegram-bot-sdk": "^2.1",
         "silex/silex": "~2.0"
     },
+    "require-dev": {
+        "phpunit/phpunit": "5.5.*",
+        "symfony/browser-kit": "^3.1"
+    },
     "authors": [
         {
             "name": "Agustin Houlgrave",
@@ -15,6 +19,11 @@
     "autoload": {
         "psr-4": {
             "Telegram\\Bot\\Silex\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Telegram\\Bot\\Silex\\Test\\": "tests/"
         }
     }
 }
