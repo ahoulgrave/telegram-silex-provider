@@ -3,8 +3,8 @@ namespace Provider;
 
 use PHPUnit\Framework\TestCase;
 use Silex\Application;
-use Telegram\Bot\Api;
 use Telegram\Bot\Silex\Provider\TelegramServiceProvider;
+use Telegram\Bot\Silex\Service\TelegramService;
 
 class ServiceProviderTest extends TestCase
 {
@@ -28,6 +28,6 @@ class ServiceProviderTest extends TestCase
         $app->register(new TelegramServiceProvider(), [
             'telegram.bot_api' => 'testapicode'
         ]);
-        $this->assertInstanceOf(Api::class, $app['telegram']);
+        $this->assertInstanceOf(TelegramService::class, $app['telegram']);
     }
 }

@@ -3,8 +3,8 @@ namespace Telegram\Bot\Silex\Test\Command;
 
 use PHPUnit\Framework\TestCase;
 use Silex\Application;
-use Telegram\Bot\Api;
 use Telegram\Bot\Silex\Provider\TelegramServiceProvider;
+use Telegram\Bot\Silex\Service\TelegramService;
 
 class ApplicationAwareCommandTest extends TestCase
 {
@@ -20,7 +20,7 @@ class ApplicationAwareCommandTest extends TestCase
                 TestCommand::class
             ]
         ]);
-        /* @var $api Api */
+        /* @var $api TelegramService */
         $api = $app['telegram'];
         foreach ($api->getCommands() as $command) {
             $this->assertInstanceOf(Application::class, $command->getApplication());

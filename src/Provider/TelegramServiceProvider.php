@@ -3,7 +3,7 @@ namespace Telegram\Bot\Silex\Provider;
 
 use Pimple\Container;
 use Pimple\ServiceProviderInterface;
-use Telegram\Bot\Api;
+use Telegram\Bot\Silex\Service\TelegramService;
 
 class TelegramServiceProvider implements ServiceProviderInterface
 {
@@ -16,13 +16,13 @@ class TelegramServiceProvider implements ServiceProviderInterface
             if (!isset($app['telegram.bot_api'])) {
                 throw new \Exception('telegram.bot_api parameter must be set.');
             }
-            $botApi = new Api($app['telegram.bot_api']);
+            $botApi = new TelegramService($app, $app['telegram.bot_api']);
             if (
                 isset($app['telegram.commands'])
                 && is_array($app['telegram.commands'])
             ) {
                 foreach ($app['telegram.commands'] as $command) {
-                    $botApi->addCommand(new $command($app));
+                    $botApi->addCommand($command);
                 }
             }
             return $botApi;
