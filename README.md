@@ -1,7 +1,8 @@
 # Telegram PHP SDK Silex Service Provider
 <a href="https://travis-ci.org/ahoulgrave/telegram-silex-provider"><img src="https://travis-ci.org/ahoulgrave/telegram-silex-provider.svg?branch=master" alt="Build status"></a>
 
-A Silex service provider to integrate the Telegram PHP SDK with Silex
+### <a name="overview">Overview</a>
+A Silex service provider to integrate the Telegram PHP SDK
 ### <a name="requirements">Requirements</a>
 
  - [Silex 2+](http://silex.sensiolabs.org/)
